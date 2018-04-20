@@ -1,4 +1,2 @@
-Keras
-Tensorflow
 Flask
 gunicorn
