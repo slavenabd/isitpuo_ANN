@@ -1,5 +1,5 @@
 # isitpuo_ANN
-**Predicting posterior urethral obstruction in boys with lower urinary tract symptoms using deep artificial neural network**
+**Predicting late-presenting posterior urethral valve**
 
 ## About
 *isitpuo ANN* is a deep artifical neural network that classifies uroflowmetry reports and predicts posterior urethral obstruction in boys wtih lower urinary tract symptoms (LUTS). The ground truth observations are cases of posterior urethral valve in boys aged 3 to 17 years who presented with storage or voding LUTS. Patients who persitently had peak flow rate below 5th percentile for age and gender, and who were completely or partialy unresponsive to the measures of standard urotherapy were referred for cistoscopy. Uroflow reports from patients prior to visualisation and electroresection of PUV were retropectively collected as ground truth observations for posterior urethral obstruction. Observtions classified as normal were uroflow reports of children without LUTS, without anomalies of kidneys or urinary tract, withut bladder outlet obstruction, neurognic bladder or constipation.
