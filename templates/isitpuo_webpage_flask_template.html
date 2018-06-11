@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Predicting posterior urethral obstruction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Predicting posterior urethral obstruction in boys with lower urinary tract symptoms using deep artifitial neural network">
+    <meta name="author" content="Slaven Abdovic">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style type="text/css">
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      #wrap {
+        min-height: 100%;
+        height: auto !important;
+        height: 100%;
+
+        margin: 0 auto -60px;
+      }
+
+      #push,
+      #footer {
+        height: 60px;
+      }
+      #footer {
+        background-color: #f5f5f5;
+        text-align: center;
+      }
+
+      @media (max-width: 767px) {
+        #footer {
+          margin-left: -20px;
+          margin-right: -20px;
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+      }
+
+      .container {
+        width: auto;
+        max-width: 680px;
+      }
+      .container .credit {
+        margin: 20px 0;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div id="wrap">
+      <div class="container">
+        <div class="page-header">
+          <h3>Predicting posterior urethral obstruction in boys with lower urinary tract symptoms using deep artifitial neural network</h3>
+        </div>
+        <p class="lead">Introduction:</p>
+        <p>Congenital posterior urethral obstruction (POO) is congenital obstruction of urethra in boys which manifests as posterior urethral valve (PUV) in infancy. However, POO can also manifest in preshool and school-age boys when it presents with weak or intermittent stream, straining, hesistancy, but also with urgency and extrodinary daytime frequency. These symptoms usually occur without hydronephrosis, vesicourethral reflux, or infection, which are charateristic for PUV of infancy.</p>
+        <p>Aim of this study was to report frequency of POO in preschool and school age boys with LUTS in outpatient clinic, investigate clinical and diagnostical variables which are significantlly correlated with the finding of POO on cystoscopy, and to develop classification deep neural network for the prediction of POO in boys with LUTS.</p>
+        <p class="lead">Test prediction:</p>
+        <p>
+          {%- if request.path == "/" %}
+            <form method="GET" action="/evaluate">
+              <div class="form-group row">
+                <label for="age" class="col-sm-5 col-form-label text-right">Age (years.0)</label>
+                <div class="col-sm-4">
+                  <input type="number" class="form-control" name="age" id="age" placeholder="e.g. 5" value="{{ age }}" required>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="peak_flow_rate" class="col-sm-5 col-form-label text-right">Peak Flow Rate (mL/s)</label>
+                <div class="col-sm-4">
+                  <input type="number" class="form-control" name="peak_flow_rate" id="peak_flow_rate" placeholder="e.g. 10" value="{{ peak_flow_rate }}" required>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="time_to_peak" class="col-sm-5 col-form-label text-right">Time to Peak (s)</label>
+                <div class="col-sm-4">
+                  <input type="number" class="form-control" name="time_to_peak" id="time_to_peak" placeholder="e.g. 5" value="{{ time_to_peak }}" required>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="volume" class="col-sm-5 col-form-label text-right">Volume (mL)</label>
+                <div class="col-sm-4">
+                  <input type="number" class="form-control" name="volume" id="volume" placeholder="e.g. 100" value="{{ volume }}" required>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="flow_time" class="col-sm-5 col-form-label text-right">Flow Time (s)</label>
+                <div class="col-sm-4">
+                  <input type="number" class="form-control" name="flow_time" id="flow_time" placeholder="e.g. 10" value="{{ flow_time }}" required>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="voiding_time" class="col-sm-5 col-form-label text-right">Voiding Time (s)</label>
+                <div class="col-sm-4">
+                  <input type="number" class="form-control" name="voiding_time" id="voiding_time" placeholder="e.g. 15" value="{{ voiding_time }}" required>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="average_flow_rate" class="col-sm-5 col-form-label text-right">Average Flow Rate (mL/s)</label>
+                <div class="col-sm-4">
+                  <input type="number" class="form-control" name="average_flow_rate" id="average_flow_rate" placeholder="e.g. 5" value="{{ average_flow_rate }}" required>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-sm-5"></div>
+                <div class="col-sm-7">
+                  <button type="submit" class="btn btn-primary">Evaluate</button>
+                  <button type="reset" class="btn btn-default">Reset</button>
+                </div>
+              </div>
+            </form>
+          {% endif %}
+          {%- if request.path == "/evaluate" %}
+          <pre>
+Age: {{ age }} years 
+Peak flow rate: {{ peak_flow_rate }} mL/s 
+Time to peak: {{ time_to_peak }} s 
+Volume: {{ volume }} mL 
+Flow time: {{ flow_time }} s 
+Voiding time: {{ voiding_time }} s 
+Average flow rate: {{ average_flow_rate }} mL/s 
+Probability of PUO: {{ probability }} 
+Posterior urethral obstruction: {{ prediction }}</pre>
+          <a class="btn btn-primary" href="/"">Try another one?</a>
+          {% endif %}
+        </p>
+      </div>
+
+      <div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">Author: <a href="https://github.com/slavenabd">slavenabd</a>, <a href="mailto:sabdovic@gmail.com">sabdovic@gmail.com</a>. © 2018</p>
+      </div>
+    </div>
+  </body>
+</html>
