@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Predicting posterior urethral obstruction</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Predicting posterior urethral obstruction in boys with lower urinary tract symptoms using deep artifitial neural network">
+    <meta name="description" content="Predicting late-presenting posterior urethral valve">
     <meta name="author" content="Slaven Abdovic">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -56,11 +56,12 @@
     <div id="wrap">
       <div class="container">
         <div class="page-header">
-          <h3>Predicting posterior urethral obstruction in boys with lower urinary tract symptoms using deep artifitial neural network</h3>
+          <h3>Predicting late-presenting posterior urethral valve</h3>
         </div>
-        <p class="lead">Introduction:</p>
-        <p>Congenital posterior urethral obstruction (POO) is congenital obstruction of urethra in boys which manifests as posterior urethral valve (PUV) in infancy. However, POO can also manifest in preshool and school-age boys when it presents with weak or intermittent stream, straining, hesistancy, but also with urgency and extrodinary daytime frequency. These symptoms usually occur without hydronephrosis, vesicourethral reflux, or infection, which are charateristic for PUV of infancy.</p>
-        <p>Aim of this study was to report frequency of POO in preschool and school age boys with LUTS in outpatient clinic, investigate clinical and diagnostical variables which are significantlly correlated with the finding of POO on cystoscopy, and to develop classification deep neural network for the prediction of POO in boys with LUTS.</p>
+        <p class="lead">About</p>
+        <p>isitpuo_ANN is a deep artificial neural network that classifies uroflowmetry reports from boys with lower urinary tract symptoms and predicts the probability of finding the late-presenting posterior urethral valve if cystoscopy is performed.</p>
+        <p class="lead">Disclaimer</p>
+        <p>This deep artificial neural network is for a research use only. Differential medical diagnosis and diagnostic workup should be guided by signs and symptoms, clinical course, medical history, and appropriate diagnostic tests according to the accepted guidelines. This neural network model is not validated as a diagnostic test for bladder outlet obstructions in both children and adults and should not be used as such.</p>
         <p class="lead">Test prediction:</p>
         <p>
           {%- if request.path == "/" %}
