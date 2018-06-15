@@ -1,4 +1,7 @@
 Flask
 gunicorn
+h5py
+keras
 numpy
 pandas
+sklearn
