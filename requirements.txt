@@ -1,7 +1,7 @@
-Flask
+flask
 gunicorn
 h5py
 keras
-numpy
 pandas
 sklearn
+tensorflow
