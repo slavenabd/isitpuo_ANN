@@ -9,7 +9,7 @@ This deep artificial neural network is for a reasearch use only. Differential me
 
 ## Files
 + *_st* is for the classification of single observations
-+ *_bt* is for the classfication of the batch of observations written in the *Batch.csv*
++ *_bt* is for the classification of the batch of observations written in the *Batch.csv*
 + *Data_3.csv* are ground truth observations used for the ANN training
 
 ## Web application
