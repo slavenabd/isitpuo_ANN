@@ -7,4 +7,9 @@
 ## Disclaimer
 This deep artificial neural network is for a reasearch use only. Differential medical diagnosis and diagnostic workup should be guided by signs and symptoms, clinical course, medical history, and appropriate diagnostic tests according to the accepted guidelines. This neural network model is not validated as a diagnostic test for bladder outlet obstructions in both children and adults and should not be used as such.
 
-Model will be uploaded after peer review process.
+## Files
+_st is for the classification of single observations
+_bt is for the classfication of the batch of observations written in the Batch.csv
+Data_3.csv are ground truth observations used for the ANN training
+
+Web application is available [here](https://isitpuo.herokuapp.com "isitpuo web app").
