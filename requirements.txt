@@ -1,8 +1,8 @@
 tensorflow
 keras
-scipy
 numpy
 pandas
-scikit-learn
+sklearn
 h5py
 matplotlib
+tabulate
