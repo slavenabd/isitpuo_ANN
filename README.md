@@ -14,3 +14,6 @@ This deep artificial neural network is for a research use only. Differential med
 
 ## Web application
 Web application is available [here](https://isitpuo.herokuapp.com "isitpuo web app").
+
+## Published paper
+This work is published in World Journal of Urology; the full article is available [here](https://link.springer.com/epdf/10.1007/s00345-018-2588-9?author_access_token=zcdOEwBhm6ljGPRHd8l25Pe4RwlQNchNByi7wbcMAY4saoFb4UdT4u5DHP8E48UWqhEJkZ7ViunGSBZTA9awWbixwHKnV4jNw95v4Wkf_4nnn1KwbVboTrMgXvp0gv15qoFLVFyDRHDet8RsnIGjUg%3D%3D).
